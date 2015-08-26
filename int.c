@@ -74,7 +74,7 @@ void eval(){
 			
 int main(){
 	init();
-	printf("Happy brainfuck!!! press h for help\nbegin\n\n");
+	printf("Happy brain fucking!!! press h for help\nbegin\n\n");
 	while(1){
 		com=(char*)malloc(500);
 		com=readline("\n>>> ");
