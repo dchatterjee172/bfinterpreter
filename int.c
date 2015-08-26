@@ -74,10 +74,10 @@ void eval(){
 			
 int main(){
 	init();
-	printf("begin\n\n");
+	printf("Happy brainfuck!!! press h for help\nbegin\n\n");
 	while(1){
 		com=(char*)malloc(500);
-		com=readline(">>> ");
+		com=readline("\n>>> ");
 		add_history(com);
 		if(com[0]=='e'){
 			exit(0);
@@ -86,7 +86,7 @@ int main(){
 			main();
 		}
 		else if(com[0]=='h'){
-			printf("\n > to increase the address \n < to decrease the address \n + to increase the value of the address \n - to decrease the value of the address \n , to input \n . to output \n [ to start a loop \n ] to end the scope of a loop");
+			printf("\n > to increase the address \n < to decrease the address \n + to increase the value of the address \n - to decrease the value of the address \n , to input \n . to output \n [ to start a loop \n ] to end the scope of a loop \n r to reset every thing and restart the interpreter \n e to exit");
 		}
 		eval();
 		free(com);
