@@ -1,6 +1,8 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
+#include <editline/readline.h>
+#include <editline/history.h>
 int *arr;
 char *com;
 void init(){
@@ -74,10 +76,9 @@ int main(){
 	init();
 	printf("begin\n\n");
 	while(1){
-		printf("\n>>> ");
 		com=(char*)malloc(500);
-		fgets(com,500,stdin);
-		com[strlen(com)-1]='\0';
+		com=readline(">>> ");
+		add_history(com);
 		if(com[0]=='e'){
 			exit(0);
 		}
