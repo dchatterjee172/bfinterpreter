@@ -7,7 +7,7 @@ int *arr;
 char *com;
 void init(){
 	int i;
-	arr=(int *)malloc(2000);
+	arr=(int *)malloc(30000);
 	for(i=0;i<500;i++)
 		arr[i]=0;
 }
@@ -86,7 +86,7 @@ int main(){
 			main();
 		}
 		else if(com[0]=='h'){
-			printf("\n > to increase the address \n < to decrease the address \n + to increase the value of the address \n - to decrease the value of the address \n , to input \n . to output \n [ to start a loop \n ] to end the scope of a loop \n r to reset every thing and restart the interpreter \n e to exit");
+			printf("\n > Increment the pointer. \n < Decrement the pointer. \n + Increment the byte at the pointer. \n - Decrement the byte at the pointer. \n , Input a byte and store it in the byte at the pointer. \n . Output the byte at the pointer. \n [ Jump forward past the matching ] if the byte at the pointer is zero. \n ] Jump backward to the matching [ unless the byte at the pointer is zero. \n r to reset every thing and restart the interpreter \n e to exit");
 		}
 		eval();
 		free(com);
