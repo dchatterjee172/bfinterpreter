@@ -76,7 +76,7 @@ int main(){
 	init();
 	printf("Happy brain fucking!!! press h for help\nbegin\n\n");
 	while(1){
-		com=(char*)malloc(500);
+		com=(char*)malloc(1000);
 		com=readline("\n>>> ");
 		add_history(com);
 		if(com[0]=='e'){
