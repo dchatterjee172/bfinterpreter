@@ -7,7 +7,7 @@ int *arr;
 char *com;
 void init(){
 	int i;
-	arr=(int *)malloc(30000);
+	arr=(int *)malloc(30000*4);
 	for(i=0;i<500;i++)
 		arr[i]=0;
 }
@@ -76,7 +76,7 @@ int main(){
 	init();
 	printf("Happy brain fucking!!! press h for help\nbegin\n\n");
 	while(1){
-		com=(char*)malloc(1000);
+		com=(char*)malloc(10000);
 		com=readline("\n>>> ");
 		add_history(com);
 		if(com[0]=='e'){
