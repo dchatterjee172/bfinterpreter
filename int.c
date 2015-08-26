@@ -9,6 +9,7 @@ void init(){
 	for(i=0;i<500;i++)
 		arr[i]=0;
 }
+
 int loop1(int i){
 	int k;
 	for(;com[i]!=']';i++){
@@ -39,6 +40,8 @@ int loop1(int i){
 	
 void eval(){
 	int i,k;
+	char *arr1;
+	arr1=(char *)malloc(50);
 	for(i=0;i<strlen(com);i++){
 		if(com[i]=='>')
 			arr=arr+1;
@@ -50,9 +53,12 @@ void eval(){
 			*arr=*arr-1;
 		else if(com[i]=='.'){
 			putchar(*arr);
+			printf("\n");
 		}
 		else if(com[i]==','){
-			*arr=getchar();
+			fgets(arr1,50,stdin);
+			arr1[strlen(arr1)-1]='\n';
+			*arr=arr1[0];
 		}
 		else if(com[i]=='['){
 			while(*arr){
@@ -66,15 +72,22 @@ void eval(){
 			
 int main(){
 	init();
+	printf("begin\n\n");
 	while(1){
-		com=(char *)malloc(500);
-		printf(">>> ");
+		printf("\n>>> ");
+		com=(char*)malloc(500);
 		fgets(com,500,stdin);
 		com[strlen(com)-1]='\0';
 		if(com[0]=='e'){
 			exit(0);
 		}
-		eval(0);
+		else if(com[0]=='r'){
+			main();
+		}
+		else if(com[0]=='h'){
+			printf("\n > to increase the address \n < to decrease the address \n + to increase the value of the address \n - to decrease the value of the address \n , to input \n . to output \n [ to start a loop \n ] to end the scope of a loop");
+		}
+		eval();
 		free(com);
 	}
 	return 0;
