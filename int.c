@@ -59,8 +59,8 @@ int next(int insp){
 
 void eval(){
 	int insp;
-	//char *arr1;
-	//arr1=(char *)malloc(3);
+	char *arr1;
+	arr1=(char *)malloc(3);
 	for(insp=0;insp<strlen(com);insp++){
 		if(com[insp]=='>')
 			arr=arr+1;
@@ -70,13 +70,13 @@ void eval(){
 			*arr=*arr+1;
 		else if(com[insp]=='-')
 			*arr=*arr-1;
-		else if(com[insp]=='.')
+		else if(com[insp]=='.'){
 			putchar(*arr);
+		}
 		else if(com[insp]==','){
-			//fgets(arr1,3,stdin);
-			//arr1[strlen(arr1)-1]='\n';
-			//*arr=arr1[0];
-			*arr=getchar();
+			fgets(arr1,3,stdin);
+			arr1[strlen(arr1)-1]='\n';
+			*arr=arr1[0];
 		}
 		else if(com[insp]=='['){
 			if(*arr){
@@ -94,8 +94,8 @@ void eval(){
 }
 			
 int main(){
-	
-	printf("Happy brain fucking!!! press h for help\nbegin\n\n");
+	init();
+	printf("\n\nHappy brain fucking!!! (press h for help)\n");
 	while(1){
 		com=(char*)malloc(10000);
 		com=readline("\n>>> ");
@@ -107,9 +107,9 @@ int main(){
 			main();
 		}
 		else if(com[0]=='h'){
-			printf("\n > Increment the pointer. \n < Decrement the pointer. \n + Increment the byte at the pointer. \n - Decrement the byte at the pointer. \n , Input a byte and store it in the byte at the pointer. \n . Output the byte at the pointer. \n [ Jump forward past the matching ] if the byte at the pointer is zero. \n ] Jump backward to the matching [ unless the byte at the pointer is zero. \n r to reset every thing and restart the interpreter \n e to exit");
+			printf("\n > Increment the pointer. \n < Decrement the pointer. \n + Increment the byte at the pointer. \n - Decrement the byte at the pointer. \n , Input a byte and store it in the byte at the pointer. \n . Output the byte at the pointer. \n [ Jump forward past the matching ] if the byte at the pointer is zero. \n ] Jump backward to the matching [ unless the byte at the pointer is zero. \n r to reset every thing and restart the interpreter \n e to exit\n");
 		}
-		init();
+	
 		eval();
 		free(com);
 	}
