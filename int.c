@@ -104,6 +104,8 @@ int main(){
 			exit(0);
 		}
 		else if(com[0]=='r'){
+			free(arr);
+			free(com);
 			main();
 		}
 		else if(com[0]=='h'){
